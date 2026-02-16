@@ -1,0 +1,67 @@
+{
+  "seed": 35,
+  "spanning": 1.60,
+  "frequency": "0.25h",
+  "n_sequence": 1440,
+  "n_points_testing": 92,
+  "n_points_future": 84,
+  "scaling": {
+    "features": ["measure"]
+  },
+  "modelling": {
+    "fields": ["measure"],
+    "targets": ["measure"],
+    "epochs": 9,
+    "patience": 2,
+    "monitor": "loss",
+    "min_delta": 0.00001,
+    "units": [135, 160],
+    "batch_size": [32],
+    "path": {
+      "initial": "architecture/arc-rnn-lstm/initial",
+      "live": "architecture/arc-rnn-lstm/live"
+    }
+  },
+  "metrics": {
+    "path": {
+      "initial": "warehouse/architecture/arc-rnn-lstm/initial/metrics",
+      "live": "warehouse/architecture/arc-rnn-lstm/live/metrics"
+    }
+  },
+  "inference": {
+    "initial": {
+      "model": "initial",
+      "destination": "warehouse/architecture/arc-rnn-lstm/initial/inference",
+      "n_samples_use_": 125
+    },
+    "live": {
+      "model": "live",
+      "destination": "warehouse/architecture/arc-rnn-lstm/live/inference",
+      "n_samples_use_": 125
+    },
+    "service": {
+      "model": "live",
+      "destination": "warehouse/architecture/arc-rnn-lstm/service/inference",
+      "n_samples_use_": 35
+    },
+    "warning": {
+      "model": "live",
+      "destination": "warehouse/architecture/arc-rnn-lstm/warning/inference",
+      "n_samples_use_": 90
+    }
+  },
+  "s3": {
+    "p_bucket": "internal",
+    "p_prefix": "path_internal_data",
+    "affix": "fundamentals"
+  },
+  "series": {
+    "excerpt": [54448010, 54464010, 54480010, 54611010, 54677010, 54693010, 54814010, 57199010, 59393010, 59311010, 59336010, 57379010, 57693010, 57047010]
+  },
+  "catchments": {
+    "excerpt": [277174, 277183, 277149, 277152]
+  },
+  "cpu": false,
+  "project_tag": "hydrography",
+  "project_key_name": "HydrographyProject"
+}
