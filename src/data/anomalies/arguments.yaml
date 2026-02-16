@@ -7,6 +7,9 @@ detecting:
     length: 4
   asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an aymptote/flat-line if the values are equal.
     length: 4
+edges:
+  p_bucket: "external" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
+  key_name: "warehouse/quantiles/aggregates/aggregates.json"
 scaling:
   features: ["measure"] # The variables that will undergo scaling.
 inference:
