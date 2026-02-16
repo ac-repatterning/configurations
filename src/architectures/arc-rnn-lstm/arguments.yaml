@@ -1,0 +1,52 @@
+seed: 35
+spanning: 1.60 # The number of years of data for modelling.
+frequency: "0.25h" # The data granularity for model development; hour.
+n_sequence: 1440 # The length, vis-à-vis frequency points, of the learning sequence, i.e., length of history.
+n_points_testing: 92 # The number of points to predict during the testing stage.
+n_points_future: 84 # The number of future points to predict.
+scaling:
+  features: ["measure"] # The variables that will undergo scaling.
+modelling:
+  fields: ["measure"] # The input field/s of the deep learning architecture.
+  targets: ["measure"] # The target field/s of the deep learning architecture.
+  epochs: 9 # The number of epochs.
+  patience: 2 # Early stopping patience.
+  monitor: "loss" # https://keras.io/api/callbacks/early_stopping/
+  min_delta: 0.00001 # https://keras.io/api/callbacks/early_stopping/ -> vis-à-vis monitoring metric, e.g., root mean square error, loss, etc.
+  units: [135, 160] # The number of units choices, vis-à-vis long short-term memory architecture
+  batch_size: [32] # Batch size.
+  path: # ... for the artefacts.
+    initial: "architecture/arc-rnn-lstm/initial"
+    live: "architecture/arc-rnn-lstm/live"
+metrics:
+  path: # ... vis-à-vis models; initial & live stages.
+    initial: "warehouse/architecture/arc-rnn-lstm/initial/metrics"
+    live: "warehouse/architecture/arc-rnn-lstm/live/metrics"
+inference:
+  initial:
+    model: "initial" # The modelling path
+    destination: "warehouse/architecture/arc-rnn-lstm/initial/inference" # The storage area prefix for the inference artefacts; pre-live.
+    n_samples_use_: 125 # The number of historic-days-of-estimates to include in forecast graphs.
+  live:
+    model: "live" # The modelling path
+    destination: "warehouse/architecture/arc-rnn-lstm/live/inference" # The storage area prefix for the inference artefacts.
+    n_samples_use_: 125 # The number of historic-days-of-estimates to include in forecast graphs.
+  service:
+    model: "live" # The modelling path
+    destination: "warehouse/architecture/arc-rnn-lstm/service/inference" # This will be the storage area prefix for on-demand request.
+    n_samples_use_: 35 # The number of historic-days-of-estimates to include in forecast graphs.
+  warning:
+    model: "live" # The modelling path
+    destination: "warehouse/architecture/arc-rnn-lstm/warning/inference" # The storage area prefix for the inference artefacts; warning periods.
+    n_samples_use_: 90 # The number of historic-days-of-estimates to include in forecast graphs.
+s3:
+  p_bucket: "internal" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
+  p_prefix: "path_internal_data" # The Amazon S3 prefix parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 prefix value.
+  affix: "fundamentals" # Extends the prefix; vis-à-vis source.
+series:
+  excerpt: [54448010, 54464010, 54480010, 54611010, 54677010, 54693010, 54814010, 57199010, 59393010, 59311010, 59336010, 57379010, 57693010, 57047010] # Each is a series code.  If null, models are built for all series/gauges.
+catchments:
+  excerpt: [277174, 277183, 277149, 277152] # Each is a catchment code.  If null, models are built for all series/gauges within a catchment.
+cpu: False # Should computations proceed via a machine's Central Processing Unit only?  If False, computation will proceed via both graphics processing unit and central processing unit.
+project_tag: "hydrography" # The project's tag, in aid of cost tracking.
+project_key_name: "HydrographyProject" # The project's key name.
