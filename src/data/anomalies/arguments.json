@@ -14,6 +14,10 @@
       "length": 4
     }
   },
+  "edges": {
+    "p_bucket": "external",
+    "key_name": "warehouse/quantiles/aggregates/aggregates.json"
+  },
   "inference": {
     "initial": {
       "model": "initial",
