@@ -1,0 +1,3 @@
+period: "P1Y" # Acquire data via annual chunks
+frequency: "YS" # The corresponding pandas.date_range frequency value, vis-à-vis period.
+restart: False # Per gauge, re-compute across all years

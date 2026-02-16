@@ -1,0 +1,23 @@
+{
+  "seed": 25,
+  "spanning": 2.5,
+  "frequency": "h",
+  "seasons": {
+    "number_of": 12,
+    "steps_per": [744, 672, 744, 720, 720, 744, 744, 744, 720, 744, 720, 744]
+  },
+  "testing": 84,
+  "ahead": 48,
+  "n_variational_steps": 500,
+  "learning_rate": 0.1,
+  "n_samples": 65,
+  "s3": {
+    "p_bucket": "internal",
+    "p_prefix": "path_internal_data",
+    "affix": "resamples"
+  },
+  "series": {
+    "excerpt": [56795010, 56827010, 57123010, 57306010, 57459010, 57475010, 57960010, 58033010, 58334010, 59736010]
+  },
+  "cpu": true
+}

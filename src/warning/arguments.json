@@ -1,0 +1,67 @@
+{
+  "seed": 5,
+  "s3": {
+    "p_bucket": "internal",
+    "prefix": "warning"
+  },
+  "cpu": true,
+  "project_key_name": "HydrographyProject",
+  "testing": false,
+  "n_catchments_limit": 4,
+  "scheduler_events_forecasting": {
+    "name": "HydrographyWarningDiscrete",
+    "schedule_expression": "cron(45 09,21 * * ? *)",
+    "schedule_expression_timezone": "Europe/Dublin",
+    "target": {
+      "arn_node": "schedule-target-arn-h-warning-discrete",
+      "retry_policy": {
+        "maximum_event_age_in_seconds": 900,
+        "maximum_retry_attempts": 1
+      }
+    },
+    "action_after_completion": "DELETE",
+    "flexible_time_window": {
+      "mode": "FLEXIBLE",
+      "maximum_window_in_minutes": 3
+    }
+  },
+  "scheduler_events_fundamental": {
+    "name": "HydrographyWarningContinuous",
+    "schedule_expression": "rate(2 hours)",
+    "schedule_expression_timezone": "Europe/Dublin",
+    "target": {
+      "arn_node": "schedule-target-arn-h-warning-continuous",
+      "retry_policy": {
+        "maximum_event_age_in_seconds": 900,
+        "maximum_retry_attempts": 1
+      }
+    },
+    "action_after_completion": "DELETE",
+    "flexible_time_window": {
+      "mode": "FLEXIBLE",
+      "maximum_window_in_minutes": 2
+    }
+  },
+  "scheduler_continuous": {
+    "name": "HydrographyContinuous",
+    "schedule_expression": "cron(10 02 ? * * 2026)",
+    "schedule_expression_timezone": "Europe/Dublin",
+    "target": {
+      "arn_node": "schedule-target-arn-h-continuous",
+      "retry_policy": {
+        "maximum_event_age_in_seconds": 900,
+        "maximum_retry_attempts": 1
+      }
+    },
+    "action_after_completion": "DELETE",
+    "flexible_time_window": {
+      "mode": "FLEXIBLE",
+      "maximum_window_in_minutes": 6
+    },
+    "terminate": {
+      "year": 2026,
+      "month": 5,
+      "day": 31
+    }
+  }
+}
