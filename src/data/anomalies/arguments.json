@@ -14,7 +14,7 @@
       "length": 4
     }
   },
-  "edges": {
+  "g_quantiles": {
     "p_bucket": "external",
     "key_name": "warehouse/quantiles/aggregates/aggregates.json"
   },
