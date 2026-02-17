@@ -5,9 +5,9 @@ n_sequence: 1440 # The length, vis-à-vis frequency points, of the learning sequ
 detecting:
   gap: # In relation to the Not-a-Number (NaN) points of a series.  A gap if there are `length` or more consecutive NaN points.
     length: 4
-  asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an aymptote/flat-line if the values are equal.
+  asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an asymptote/flat-line if the values are equal.
     length: 4
-edges:
+g_quantiles: # The latest time series quantiles, + extrema, per gauge station time series; spanning the time extent of a gauge station's available/accessible data.
   p_bucket: "external" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
   key_name: "warehouse/quantiles/aggregates/aggregates.json"
 scaling:
