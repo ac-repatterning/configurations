@@ -6,7 +6,7 @@
   },
   "spanning": 0.025,
   "frequency": 0.25,
-  "tau": [0.25, 1],
+  "tau": 1,
   "rates": {
     "n_catchments_visible": 6
   }

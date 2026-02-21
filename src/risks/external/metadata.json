@@ -1,0 +1,14 @@
+{
+  "maps": {
+    "desc": "Maps illustrating weighted rates of change around gauge stations."
+  },
+  "menu": {
+    "desc": "Each element of the menu denotes the time span across which each weighted rate of change value, in millimetres per hour, is calculated."
+  },
+  "points": {
+    "desc": "Weighted rates of change."
+  },
+  "series": {
+    "desc": "The rate of change curve of a gauge station series."
+  }
+}
