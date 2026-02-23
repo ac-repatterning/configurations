@@ -1,0 +1,43 @@
+{
+  "seed": 35,
+  "spanning": 0.165,
+  "frequency": "0.25h",
+  "n_sequence": 1440,
+  "scaling": {
+    "features": ["measure"]
+  },
+  "detecting": {
+    "gap": {
+      "length": 4
+    },
+    "asymptote": {
+      "length": 4
+    }
+  },
+  "g_quantiles": {
+    "p_bucket": "external",
+    "key_name": "warehouse/quantiles/aggregates/aggregates.json"
+  },
+  "inference": {
+    "initial": {
+      "model": "initial",
+      "artefacts": "architecture/arc-rnn-lstm/initial",
+      "metrics": "warehouse/architecture/arc-rnn-lstm/initial",
+      "destination": "warehouse/detection/initial"
+    },
+    "live": {
+      "model": "live",
+      "artefacts": "architecture/arc-rnn-lstm/live",
+      "metrics": "warehouse/architecture/arc-rnn-lstm/live",
+      "destination": "warehouse/detection/live"
+    }
+  },
+  "s3": {
+    "p_bucket": "internal",
+    "p_prefix": "path_internal_data",
+    "affix": "fundamentals"
+  },
+  "cpu": false,
+  "project_tag": "hydrography",
+  "project_key_name": "HydrographyProject"
+}
