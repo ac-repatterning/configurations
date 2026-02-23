@@ -23,13 +23,13 @@
       "model": "initial",
       "artefacts": "architecture/arc-rnn-lstm/initial",
       "metrics": "warehouse/architecture/arc-rnn-lstm/initial",
-      "destination": "warehouse/anomalies/initial"
+      "destination": "warehouse/detection/initial"
     },
     "live": {
       "model": "live",
       "artefacts": "architecture/arc-rnn-lstm/live",
       "metrics": "warehouse/architecture/arc-rnn-lstm/live",
-      "destination": "warehouse/anomalies/live"
+      "destination": "warehouse/detection/live"
     }
   },
   "s3": {
