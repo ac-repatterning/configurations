@@ -1,0 +1,11 @@
+{
+  "perspective": {
+    "desc": "Overarching summary."
+  },
+  "points": {
+    "desc": "Each JSON summarises the a variety of gauge series detections."
+  },
+  "menu": {
+    "desc": "For selecting a gauge's graphs of detections via the gauge's time series identifier."
+  }
+}
