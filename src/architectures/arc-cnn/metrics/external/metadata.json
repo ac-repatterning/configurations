@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "desc": "For selecting a - points - graph via its gauge-time-series identifier."
+  },
+  "points": {
+    "desc": "For illustrating predictions with respect to training and testing data, alongside absolute percentage error per point."
+  },
+  "aggregates": {
+    "desc": "For illustrating error metrics per gauge and catchment.  Each menu item is a catchment area. The metrics are root mean square error (r_mean_se), root median square error (r_median_se), mean percentage error (mean_pe), median percentage error (median_pe), mean error (mean_e), median error (median_e), percentage error lower whisker (l_whisker), percentage error upper whisker (u_whisker)."
+  }
+}

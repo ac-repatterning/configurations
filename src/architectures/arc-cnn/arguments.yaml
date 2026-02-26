@@ -16,28 +16,28 @@ modelling:
   units: [135, 160] # The number of units choices, vis-à-vis long short-term memory architecture
   batch_size: [32] # Batch size.
   path: # ... for the artefacts.
-    initial: "architecture/arc-convolution/initial"
-    live: "architecture/arc-convolution/live"
+    initial: "architecture/arc-cnn/initial"
+    live: "architecture/arc-cnn/live"
 metrics:
   path: # ... vis-à-vis models; initial & live stages.
-    initial: "warehouse/architecture/arc-convolution/initial/metrics"
-    live: "warehouse/architecture/arc-convolution/live/metrics"
+    initial: "warehouse/architecture/arc-cnn/initial/metrics"
+    live: "warehouse/architecture/arc-cnn/live/metrics"
 inference:
   initial:
     model: "initial" # The modelling path
-    destination: "warehouse/architecture/arc-convolution/initial/inference" # The storage area prefix for the inference artefacts; pre-live.
+    destination: "warehouse/architecture/arc-cnn/initial/inference" # The storage area prefix for the inference artefacts; pre-live.
     n_samples_use_: 125 # The number of historic-days-of-estimates to include in forecast graphs.
   live:
     model: "live" # The modelling path
-    destination: "warehouse/architecture/arc-convolution/live/inference" # The storage area prefix for the inference artefacts.
+    destination: "warehouse/architecture/arc-cnn/live/inference" # The storage area prefix for the inference artefacts.
     n_samples_use_: 125 # The number of historic-days-of-estimates to include in forecast graphs.
   service:
     model: "live" # The modelling path
-    destination: "warehouse/architecture/arc-convolution/service/inference" # This will be the storage area prefix for on-demand request.
+    destination: "warehouse/architecture/arc-cnn/service/inference" # This will be the storage area prefix for on-demand request.
     n_samples_use_: 35 # The number of historic-days-of-estimates to include in forecast graphs.
   warning:
     model: "live" # The modelling path
-    destination: "warehouse/architecture/arc-convolution/warning/inference" # The storage area prefix for the inference artefacts; warning periods.
+    destination: "warehouse/architecture/arc-cnn/warning/inference" # The storage area prefix for the inference artefacts; warning periods.
     n_samples_use_: 90 # The number of historic-days-of-estimates to include in forecast graphs.
 s3:
   p_bucket: "internal" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.

@@ -18,35 +18,35 @@
     "units": [135, 160],
     "batch_size": [32],
     "path": {
-      "initial": "architecture/arc-convolution/initial",
-      "live": "architecture/arc-convolution/live"
+      "initial": "architecture/arc-cnn/initial",
+      "live": "architecture/arc-cnn/live"
     }
   },
   "metrics": {
     "path": {
-      "initial": "warehouse/architecture/arc-convolution/initial/metrics",
-      "live": "warehouse/architecture/arc-convolution/live/metrics"
+      "initial": "warehouse/architecture/arc-cnn/initial/metrics",
+      "live": "warehouse/architecture/arc-cnn/live/metrics"
     }
   },
   "inference": {
     "initial": {
       "model": "initial",
-      "destination": "warehouse/architecture/arc-convolution/initial/inference",
+      "destination": "warehouse/architecture/arc-cnn/initial/inference",
       "n_samples_use_": 125
     },
     "live": {
       "model": "live",
-      "destination": "warehouse/architecture/arc-convolution/live/inference",
+      "destination": "warehouse/architecture/arc-cnn/live/inference",
       "n_samples_use_": 125
     },
     "service": {
       "model": "live",
-      "destination": "warehouse/architecture/arc-convolution/service/inference",
+      "destination": "warehouse/architecture/arc-cnn/service/inference",
       "n_samples_use_": 35
     },
     "warning": {
       "model": "live",
-      "destination": "warehouse/architecture/arc-convolution/warning/inference",
+      "destination": "warehouse/architecture/arc-cnn/warning/inference",
       "n_samples_use_": 90
     }
   },
