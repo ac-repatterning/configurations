@@ -9,8 +9,8 @@ scaling:
 modelling:
   fields: ["measure"] # The input field/s of the deep learning architecture.
   targets: ["measure"] # The target field/s of the deep learning architecture.
-  epochs: 9 # The number of epochs.
-  patience: 2 # Early stopping patience.
+  epochs: 13 # The number of epochs.
+  patience: 3 # Early stopping patience.
   monitor: "loss" # https://keras.io/api/callbacks/early_stopping/
   min_delta: 0.00001 # https://keras.io/api/callbacks/early_stopping/ -> vis-à-vis monitoring metric, e.g., root mean square error, loss, etc.
   filters: [32, 64] # Convolution filters
