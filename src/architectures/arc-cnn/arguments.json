@@ -12,10 +12,10 @@
     "fields": ["measure"],
     "targets": ["measure"],
     "epochs": 13,
-    "patience": 3,
+    "patience": 2,
     "monitor": "loss",
     "min_delta": 0.00001,
-    "filters": [32, 64],
+    "filters": [32, 64, 128],
     "batch_size": [32],
     "path": {
       "initial": "architecture/arc-cnn/initial",
