@@ -15,6 +15,7 @@ modelling:
   min_delta: 0.00001 # https://keras.io/api/callbacks/early_stopping/ -> vis-à-vis monitoring metric, e.g., root mean square error, loss, etc.
   filters: [32, 64, 128, 256] # Convolution filters
   batch_size: [32] # Batch size.
+  activation: "gelu" # https://keras.io/api/layers/activations/#layer-activation-functions
   path: # ... for the artefacts.
     initial: "architecture/arc-cnn/initial"
     live: "architecture/arc-cnn/live"
