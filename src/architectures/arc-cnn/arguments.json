@@ -17,7 +17,7 @@
     "min_delta": 0.00001,
     "filters": [32, 64, 128, 256],
     "batch_size": [32],
-    "activation": "relu",
+    "activation": ["relu", "gelu"],
     "path": {
       "initial": "architecture/arc-cnn/initial",
       "live": "architecture/arc-cnn/live"
