@@ -3,14 +3,14 @@ spanning: 1.60 # The number of years of data for modelling.
 frequency: "0.25h" # The data granularity for model development; hour.
 n_sequence: 1440 # The length, vis-à-vis frequency points, of the learning sequence, i.e., length of history.
 n_points_testing: 92 # The number of points to predict during the testing stage.
-n_points_future: 84 # The number of future points to predict.
+n_points_future: 64 # The number of future points to predict.
 scaling:
   features: ["measure"] # The variables that will undergo scaling.
 modelling:
   fields: ["measure"] # The input field/s of the deep learning architecture.
   targets: ["measure"] # The target field/s of the deep learning architecture.
   epochs: 21 # The number of epochs.
-  patience: 2 # Early stopping patience.
+  patience: 3 # Early stopping patience.
   monitor: "loss" # https://keras.io/api/callbacks/early_stopping/
   min_delta: 0.00001 # https://keras.io/api/callbacks/early_stopping/ -> vis-à-vis monitoring metric, e.g., root mean square error, loss, etc.
   filters: [32, 64, 128, 256] # Convolution filters
