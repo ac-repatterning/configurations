@@ -12,7 +12,7 @@
     "fields": ["measure"],
     "targets": ["measure"],
     "epochs": 21,
-    "patience": 3,
+    "patience": 2,
     "monitor": "loss",
     "min_delta": 0.00001,
     "filters": [32, 64, 128, 256],
