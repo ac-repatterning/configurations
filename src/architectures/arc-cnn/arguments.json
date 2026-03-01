@@ -4,7 +4,7 @@
   "frequency": "0.25h",
   "n_sequence": 1440,
   "n_points_testing": 92,
-  "n_points_future": 84,
+  "n_points_future": 64,
   "scaling": {
     "features": ["measure"]
   },
@@ -12,7 +12,7 @@
     "fields": ["measure"],
     "targets": ["measure"],
     "epochs": 21,
-    "patience": 2,
+    "patience": 3,
     "monitor": "loss",
     "min_delta": 0.00001,
     "filters": [32, 64, 128, 256],
