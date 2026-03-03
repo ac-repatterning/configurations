@@ -4,17 +4,17 @@
   "frequency": "0.25h",
   "n_sequence": 1440,
   "n_points_testing": 92,
-  "n_points_future": 64,
+  "n_points_future": 68,
   "scaling": {
     "features": ["measure"]
   },
   "modelling": {
     "fields": ["measure"],
     "targets": ["measure"],
-    "epochs": 21,
-    "patience": 2,
-    "monitor": "loss",
-    "min_delta": 0.00001,
+    "epochs": 16,
+    "patience": 3,
+    "monitor": "root_mean_squared_error",
+    "min_delta": 0.001,
     "filters": [32, 64, 128, 256],
     "batch_size": [32],
     "activation": ["relu", "gelu"],
