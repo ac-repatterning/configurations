@@ -1,0 +1,8 @@
+{
+  "menu": {
+    "desc": "For selecting via a gauge's time series identifier."
+  },
+  "points": {
+    "desc": "For drawing a gauge's river level time series by year."
+  }
+}
