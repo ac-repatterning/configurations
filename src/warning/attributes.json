@@ -1,0 +1,29 @@
+{
+  "seed": 5,
+  "s3": {
+    "p_bucket": "internal",
+    "prefix": "warning"
+  },
+  "cpu": true,
+  "project_tag": "hydrography",
+  "project_key_name": "HydrographyProject",
+  "testing": false,
+  "n_catchments_limit": 4,
+  "scheduler_events_forecasting": {
+    "name": "HydrographyIntensiveWarning",
+    "schedule_expression": "cron(45 13,21 * * ? *)",
+    "schedule_expression_timezone": "Europe/Dublin",
+    "target": {
+      "arn_node": "schedule-target-arn-h-intensive-warning",
+      "retry_policy": {
+        "maximum_event_age_in_seconds": 900,
+        "maximum_retry_attempts": 1
+      }
+    },
+    "action_after_completion": "DELETE",
+    "flexible_time_window": {
+      "mode": "FLEXIBLE",
+      "maximum_window_in_minutes": 3
+    }
+  }
+}
