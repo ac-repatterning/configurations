@@ -1,5 +1,6 @@
 seed: 35
 spanning: 1.60 # The number of years of data for modelling.
+at_least: 1.25 # The minimum number of data-modelling years
 frequency: "0.25h" # The data granularity for model development; hour.
 n_sequence: 1440 # The length, vis-à-vis frequency points, of the learning sequence, i.e., length of history.
 n_points_testing: 92 # The number of points to predict during the testing stage.
