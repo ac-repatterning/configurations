@@ -12,7 +12,7 @@ scheduler_events_forecasting: # Study https://boto3.amazonaws.com/v1/documentati
   schedule_expression: cron(45 13,21 * * ? *)
   schedule_expression_timezone: "Europe/Dublin"
   target:
-    arn_node: "schedule-target-arn-h-intensive-warning"
+    arn_node: "schedule-target-arn-h-c-inference-warning"
     retry_policy:
       maximum_event_age_in_seconds: 900
       maximum_retry_attempts: 1
