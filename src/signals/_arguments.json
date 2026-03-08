@@ -2,7 +2,7 @@
   "seed": 5,
   "s3": {
     "p_bucket": "internal",
-    "prefix": "warning"
+    "prefix": "signals"
   },
   "cpu": true,
   "project_tag": "hydrography",
