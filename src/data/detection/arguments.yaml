@@ -5,6 +5,7 @@ n_sequence: 1440 # The length, vis-à-vis frequency points, of the learning sequ
 detecting:
   gap: # In relation to the Not-a-Number (NaN) points of a series.  A gap if there are `length` or more consecutive NaN points.
     length: 4
+    hours: 15 # A raw series data point is missing if its time stamp occurs `N hours` before a computation time.
   asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an asymptote/flat-line if the values are equal.
     length: 4
 g_quantiles: # The latest time series quantiles, + extrema, per gauge station time series; spanning the time extent of a gauge station's available/accessible data.
