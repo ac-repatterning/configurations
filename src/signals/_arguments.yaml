@@ -1,12 +1,12 @@
 seed: 5
 s3:
   p_bucket: "internal" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
-  prefix: "warning" # The Amazon S3 prefix string for the warning objects.
+  prefix: "signals" # The Amazon S3 prefix string for the warning signals objects.
 cpu: True # Should computations proceed via a machine's Central Processing Unit only?  If False, computation will proceed via both graphics processing unit and central processing unit.
 project_tag: "hydrography" # The project's tag, in aid of cost tracking.
 project_key_name: "HydrographyProject" # The project's key name
 testing: True # A test run?
-n_catchments_limit: 4 # Initially limiting the number of catchments in focus vis-à-vis warning period
+n_catchments_limit: 4 # Initially limiting the number of catchments in focus vis-à-vis warning signals period
 scheduler_events_forecasting: # Study https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/scheduler.html
   name: "HydrographyIntensiveWarning"
   schedule_expression: cron(45 13,21 * * ? *)
