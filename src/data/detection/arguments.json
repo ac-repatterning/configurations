@@ -8,7 +8,8 @@
   },
   "detecting": {
     "gap": {
-      "length": 4
+      "length": 4,
+      "hours": 15
     },
     "asymptote": {
       "length": 4
