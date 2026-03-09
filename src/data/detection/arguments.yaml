@@ -9,7 +9,8 @@ detecting:
   asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an asymptote/flat-line if the values are equal.
     length: 4
   questionable:
-    via: "testing"
+    via: "training"
+    fraction: 0.90 # Aim, distribution spreads of [10, 90], [5, 95], etc.
 g_quantiles: # The latest time series quantiles, + extrema, per gauge station time series; spanning the time extent of a gauge station's available/accessible data.
   p_bucket: "external" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
   key_name: "warehouse/quantiles/aggregates/aggregates.json"
