@@ -8,6 +8,8 @@ detecting:
     hours: 15 # A raw series data point is missing if its time stamp occurs `N hours` before a computation time.
   asymptote: # In relation to real values.  A set of `length` or more consecutive real values is an asymptote/flat-line if the values are equal.
     length: 4
+  questionable:
+    via: "testing"
 g_quantiles: # The latest time series quantiles, + extrema, per gauge station time series; spanning the time extent of a gauge station's available/accessible data.
   p_bucket: "external" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
   key_name: "warehouse/quantiles/aggregates/aggregates.json"
