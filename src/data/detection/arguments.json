@@ -15,8 +15,8 @@
       "length": 4
     },
     "questionable": {
-      "via": "testing",
-      "fraction": 0.95
+      "via": "training",
+      "fraction": 0.65
     }
   },
   "g_quantiles": {
