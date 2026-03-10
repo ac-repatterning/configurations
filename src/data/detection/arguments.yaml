@@ -10,7 +10,7 @@ detecting:
     length: 4
   questionable:
     via: "training"
-    fraction: 0.90 # Aim, distribution spreads of [10, 90], [5, 95], etc.
+    fraction: 0.50 # Limits of errors.
 g_quantiles: # The latest time series quantiles, + extrema, per gauge station time series; spanning the time extent of a gauge station's available/accessible data.
   p_bucket: "external" # An Amazon S3 (Simple Storage Service) bucket parameter; vis-à-vis source.  The corresponding argument is an Amazon S3 bucket value.
   key_name: "warehouse/quantiles/aggregates/aggregates.json"
